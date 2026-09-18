@@ -1,6 +1,6 @@
 # New User
 
-VB6 working copy of `New User` from Dave Robinson's OneDrive Historical Dev `VB/Old` folder. Project title: Project1. `VersionCompanyName`: Chips, Bits and Bytes.
+Chips, Bits and Bytes VB6 domain user provisioning UI (form `frmMain` caption "Add User"). Loads WinNT domain groups via ADSI (`IADsDomain`) and siteloc rows from a SQL Server POLICE catalog over ADO, then fills home directory and profile paths from the chosen siteserver. Collects username, fullname, logon script, duty option (OIC / Detective / General), and dual-list group membership for the WARNBRO domain; OK/Check handlers are not present in this working copy.
 
 **Source last updated:** 2026-08-27 · **Language:** VB6 · **Target:** VB6 Win32 · **Output:** WinForms exe
 
@@ -10,7 +10,7 @@ _Note: original OneDrive LastWriteTime values were wiped to 2026-08-27 by a zip 
 
 | Project | Language | Type | Purpose |
 |---------|----------|------|---------|
-| `Project1` (`New User.vbp`) | VB6 | WinForms exe | Project1 |
+| `Project1` (`New User.vbp`) | VB6 | WinForms exe | ADSI/ADO Add User form for domain account fields and group picks |
 
 ## How to open
 
@@ -20,6 +20,8 @@ Open the `.vbp` in Visual Basic 6.0 IDE:
 ## Requirements
 
 - Visual Basic 6.0 IDE
+- Microsoft ActiveX Data Objects 2.5 and Active DS Type Library
+- Reachable SQL Server DSN (`POLICE` catalog) and WinNT domain (default WARNBRO) matching the Form_Load connection string
 
 ## Attribution and provenance
 
@@ -28,4 +30,4 @@ Company names in project files: Chips, Bits and Bytes.
 
 ## License
 
-MIT © 2026 VaderConsulting for Dave Robinson's code. See `LICENSE`.
+MIT (c) 2026 VaderConsulting for Dave Robinson's code. See `LICENSE`.
